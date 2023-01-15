@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_data/facebook.dart';
+import 'package:my_data/wa.dart';
 
 class Beranda extends StatefulWidget {
   const Beranda({super.key});
@@ -48,7 +50,7 @@ class _BerandaState extends State<Beranda> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Icon(Icons.person),
-                      Text('My Identify'),
+                      Text('My Biodata'),
                     ],
                   ),
                 )),
@@ -128,11 +130,11 @@ class _BerandaState extends State<Beranda> {
               height: 100.0,
             ),
             Container(
-              child: Text('IDENTIFY'),
+              child: Text('Biodata'),
             ),
             Text('Anggun Oktaviani'),
-            Text('Tempat Tanggal Lahir'),
-            Text('Alamat'),
+            Text('Tempat Tanggal Lahir : Banyuasin, 18 Oktober 2001'),
+            Text('Alamat : Palembang'),
           ],
         ),
       ),
@@ -142,7 +144,7 @@ class _BerandaState extends State<Beranda> {
   Widget _medsos() {
     return Center(
       child: Container(
-         margin: EdgeInsets.all(10.0),
+        margin: EdgeInsets.all(10.0),
         width: double.infinity,
         padding: EdgeInsets.all(10.0),
         decoration: BoxDecoration(
@@ -156,10 +158,13 @@ class _BerandaState extends State<Beranda> {
               child: Text('MEDIA SOSIAL'),
             ),
             SizedBox(
-              height: 20.0,
+              height: 40.0,
             ),
             MaterialButton(
-                onPressed: () {},
+                 onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Facebook()));
+                },
                 child: Container(
                   width: 150.0,
                   decoration: BoxDecoration(
@@ -179,7 +184,10 @@ class _BerandaState extends State<Beranda> {
               height: 20.0,
             ),
             MaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Wa()));
+                },
                 child: Container(
                   decoration: BoxDecoration(
                       color: Colors.green,
@@ -203,7 +211,7 @@ class _BerandaState extends State<Beranda> {
 
   Widget _selengkapnya() {
     return Container(
-       margin: EdgeInsets.all(10.0),
+        margin: EdgeInsets.all(10.0),
         width: double.infinity,
         padding: EdgeInsets.all(10.0),
         decoration: BoxDecoration(
@@ -211,16 +219,16 @@ class _BerandaState extends State<Beranda> {
           borderRadius: BorderRadius.circular(16.0),
         ),
         child: Column(
-      children: [
-        SizedBox(height: 100.0),
-        Text('Mahsiswi Institud Teknologi dan Bisnis Palcomtech'),
-        Text('Prodi S1 Informatika'),
-        Text('Belum Menikah'),
-        Text('Islam'),
-        Text('Warga Negara Indonesia'),
-        Text('Golongan Darah A++'),
-        Text('Sehat'),
-      ],
-    ));
+          children: [
+            SizedBox(height: 100.0),
+            Text('Mahsiswi Institud Teknologi dan Bisnis Palcomtech'),
+            Text('Prodi S1 Informatika'),
+            Text('Belum Menikah'),
+            Text('Islam'),
+            Text('Warga Negara Indonesia'),
+            Text('Golongan Darah A++'),
+            Text('Sehat'),
+          ],
+        ));
   }
 }
